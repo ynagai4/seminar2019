@@ -6,21 +6,20 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
         function button1Pressed(){
-            var random = Math.round(Math.random()*5);
+            // 乱数を0〜99の範囲で生成する
+            var random = Math.floor(Math.random()*100);
+
+            // おみくじの結果を決める
             var fortune;
-            if(random == 5) {
+            if(random > 80) {
                 fortune = "大吉";
-            } else if(random == 4){
+            } else if(random >20){
                 fortune = "中吉";
-            } else if(random == 3){
-                fortune = "吉";
-            } else if(random == 2){
-                fortune = "吉";
-            } else if(random == 1){
-                fortune = "末吉";
-            } else if(random == 0){
-                fortune = "凶";
+            } else {
+                fortune = "小吉";
             }
+
+            // 結果を表示する
             document.getElementById("result").innerHTML = fortune;
         }
     </script>
