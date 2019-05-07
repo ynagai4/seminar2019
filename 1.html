@@ -6,14 +6,29 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
         function button1Pressed(){
-            document.getElementById("result").innerHTML = "hello, world!";
+            var random = Math.round(Math.random()*5);
+            var fortune;
+            if(random == 5) {
+                fortune = "大吉";
+            } else if(random == 4){
+                fortune = "中吉";
+            } else if(random == 3){
+                fortune = "吉";
+            } else if(random == 2){
+                fortune = "吉";
+            } else if(random == 1){
+                fortune = "末吉";
+            } else if(random == 0){
+                fortune = "凶";
+            }
+            document.getElementById("result").innerHTML = fortune;
         }
     </script>
 </head>
 
 <body>
-    <h1>XXXX</h1>
-    <button onclick="button1Pressed()">X</button>
+    <h1>おみくじ</h1>
+    <button onclick="button1Pressed()">おみくじを引く</button>
     <button onclick="button2Pressed()">Y</button>
     <hr>
     <p id="result"></p>
