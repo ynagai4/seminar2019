@@ -5,16 +5,31 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
-        function button1Pressed(){
-            document.getElementById("result").innerHTML = "hello, world!";
+        function button1Pressed() {
+            var tf1 = Math.round(Math.random());
+            var tf2 = Math.round(Math.random());
+            var tf3 = Math.round(Math.random());
+            var tf4 = Math.round(Math.random());
+            document.getElementById("tf1").value = tf1;
+            document.getElementById("tf2").value = tf2;
+            document.getElementById("tf3").value = tf3;
+            document.getElementById("tf4").value = tf4;
+
+
         }
     </script>
 </head>
 
 <body>
-    <h1>XXXX</h1>
-    <button onclick="button1Pressed()">X</button>
-    <button onclick="button2Pressed()">Y</button>
+    <h1>2進数クイズ</h1>
+    <button onclick="button1Pressed()">生成！</button>
+    <input id="tf1" type="text">
+    <input id="tf2" type="text">
+    <input id="tf3" type="text">
+    <input id="tf4" type="text">
+    <br>
+    答えを入力：<input id="tf5" type="text">
+    <button onclick="button2Pressed()">答え合わせ</button>
     <hr>
     <p id="result"></p>
 </body>
