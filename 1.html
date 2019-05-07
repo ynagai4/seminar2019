@@ -5,18 +5,36 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
+        var result;
+        var message;
         function button1Pressed() {
+            // 乱数を生成（配列にした方が良さそう）
             var tf1 = Math.round(Math.random());
             var tf2 = Math.round(Math.random());
             var tf3 = Math.round(Math.random());
             var tf4 = Math.round(Math.random());
+
+            // 各テキストフィールドに表示
             document.getElementById("tf1").value = tf1;
             document.getElementById("tf2").value = tf2;
             document.getElementById("tf3").value = tf3;
             document.getElementById("tf4").value = tf4;
 
+            // 答えを計算しておく
+            result = 1 * tf4 + 2 * tf3 + 4 * tf2 + 8 * tf1;
+        }
+        function button2Pressed() {
+            // 答えと一致してたら正解と表示　間違ってたら答えも表示
+            if (document.getElementById("tf5").value == result) {
+                message = "正解";
+            } else {
+                message = "不正解 答えは " + result;
+            }
+            document.getElementById("result").innerHTML = message;
 
         }
+
+
     </script>
 </head>
 
