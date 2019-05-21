@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function button1Pressed(){
+            var x = Number(document.getElementById("tf1").value);
+            var y = Number(document.getElementById("tf2").value);
+            document.getElementById("tf3").value = x + y;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>計算機</h1>
+    <input id="tf1" type="text">
+    <button onclick="button1Pressed()">+</button>
+    <input id="tf2" type="text">
+    =
+    <input id="tf3" type="text">
+    <hr>
+    <p id="result"></p>
+</body>
+
+</html>
