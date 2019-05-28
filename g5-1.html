@@ -5,16 +5,18 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
-        window.onload = function () {
-
+        function button1Pressed() {
             var text = "";
+            var fruits = [];
+            fruits.push('りんご');
+            fruits.push('みかん');
             text += "<ul>";
-            for (var i = 0; i < 4; i++) {
+            for (var i = 0; i < 2; i++) {
                 text += "<li>";
-                text += i;
-                text += "</li>";
+                text += fruits[i];
+                text += "</li>"
             }
-            text += "</ul>"
+            text += "</ul>";
             document.getElementById("x").innerHTML = text;
         };
     </script>
@@ -22,6 +24,7 @@
 
 <body>
     <div id="x"></div>
+    <button onclick="button1Pressed()">リストを表示</button>
 </body>
 
 </html>

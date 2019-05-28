@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function button1Pressed() {
+
+            var table = "";
+            table += "<table border>";
+
+            for (var i = 0; i < 9; i++) {
+                table += "<tr>";
+                for (var j = 0; j < 9; j++) {
+                    table += "<td>";
+                    table += (i + 1) * (j + 1);
+                    table += "</td>";
+                }
+                table += "</tr>";
+            }
+            table += "</table>"
+            document.getElementById("x").innerHTML = table;
+        };
+    </script>
+</head>
+
+<body>
+    <div id="x"></div>
+    <button onclick="button1Pressed()">九九を表示</button>
+</body>
+
+</html>
