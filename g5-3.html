@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function button1Pressed() {
+            var text = "";
+
+            var tweets = [
+                { sid: '18110801', tweet: 'お正月なう', date: '2019-01-01' },
+                { sid: '18110801', tweet: '技術ゼミなう', date: '2019-06-01' },
+                { sid: '18110801', tweet: '都民の日', date: '2019-10-01' },
+            ];
+
+            text += "<table border>";
+
+            text += "<tr>";
+            for (var i = 0; i < 3; i++) {
+                text += "<th>";
+                text += Object.keys(tweets[0])[i];
+                text += "</th>";
+            }
+            text += "</tr>";
+
+            text += "<tr>";
+            for (var i = 0; i < 3; i++) {
+                for (var j = 0; j < 3; j++) {
+                    text += "<td>";
+                    text += Object.values(tweets[i])[j];
+                    text += "</td>";
+                }
+
+                text += "</tr>"
+            }
+
+            text += "</table>";
+            document.getElementById("x").innerHTML = text;
+        };
+    </script>
+</head>
+
+<body>
+    <div id="x"></div>
+    <button onclick="button1Pressed()">リストを表示</button>
+</body>
+
+</html>

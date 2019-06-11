@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function button1Pressed() {
+            var text = "";
+            var person = {};
+            person.lname = "青山";
+            person.fname = "太郎";
+            person.gender = "男";
+            person.age = 40;
+
+            text += "<table border>";
+
+            text += "<tr>";
+            for (var i = 0; i < 4; i++) {
+                text += "<th>";
+                text += Object.keys(person)[i];
+                text += "</th>";
+            }
+            text += "</tr>";
+
+            text += "<tr>";
+            for (var i = 0; i < 4; i++) {
+                text += "<td>";
+                text += Object.values(person)[i];
+                text += "</td>";
+            }
+
+            text += "</tr>"
+            text += "</table>";
+            document.getElementById("x").innerHTML = text;
+        };
+    </script>
+</head>
+
+<body>
+    <div id="x"></div>
+    <button onclick="button1Pressed()">リストを表示</button>
+</body>
+
+</html>
