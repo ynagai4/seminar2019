@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        var time = 0;
+        var timer;
+        var count = 0;
+        var rap = 0;
+
+
+        function a_button_pressed() {
+            count++;
+            //  奇数回押されたら押されたらカウントを始め、偶数回押されたら停止する
+            if (count % 2 != 0) {
+                timer = setInterval(tick, 1000);
+            } else {
+                clearInterval(timer);
+            }
+        }
+
+        function b_button_pressed() {
+            if (count % 2 == 0) {
+
+            } else { }
+
+        }
+
+        function c_button_pressed() {
+            time = 0;
+            document.getElementById("time-count").innerHTML = time;
+        }
+
+        function tick() {
+            time += 1;
+            document.getElementById("time-count").innerHTML = time;
+        }
+
+    </script>
+    <style type="text/css">
+        div#x {
+            border: 1px solid;
+            padding: 10px;
+            height: 100px;
+            width: 100px;
+        }
+
+        p#time-count {
+            text-align: right;
+            height: 50px;
+        }
+
+        div#buttons {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="x">
+        <p id="time-count">0</p>
+        <div id="buttons">
+            <button onclick="a_button_pressed()">A</button>
+            <button onclick="b_button_pressed()">B</button>
+            <button onclick="c_button_pressed()">C</button>
+        </div>
+    </div>
+</body>
+
+</html>
