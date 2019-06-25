@@ -8,7 +8,7 @@
         var time = 0;
         var timer;
         var state = 0; // 0は停止中，1は動作中
-        var rap = 0;
+        var rap = new Array();
         var rap_begin = 0;
         var rap_finish = 0;
 
@@ -25,10 +25,11 @@
         function b_button_pressed() {
             if (state == 0) {
                 clear();
-
+                rap = [0];
+                document.getElementById("rap").innerHTML = rap;
             } else {
                 rap_finish = time;
-                rap = rap_finish - rap_begin;
+                rap.push(rap_finish - rap_begin);
                 rap_begin = time;
                 document.getElementById("rap").innerHTML = rap;
             }
@@ -57,7 +58,6 @@
         div#x {
             border: 1px solid;
             padding: 10px;
-            height: 150px;
             width: 150px;
         }
 
